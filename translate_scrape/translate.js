@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var translate = require('google-translate-api');
  
-	translate('I don\'t like to think about stuff like that', {from: 'en', to: 'fr'}).then(res => {
+	translate('We can translate this English sentence into French', {from: 'en', to: 'fr'}).then(res => {
     console.log(res.text);
 	}).catch(err => {
     console.error(err);
