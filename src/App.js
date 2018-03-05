@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Recognition from './Components/Recognition'
-import Voice from './Components/Voice'
+import Recognition from './Components/Recognition';
+import Voice from './Components/Voice';
 import './App.css';
 
 class App extends Component {

@@ -11,6 +11,9 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.2",
+    "google-translate": "^2.1.0",
+    "google-translate-api": "^2.3.0",
+    "node-google-translate-free": "^0.1.0",
     "request": "^2.83.0"
   }
 }
