@@ -29,7 +29,8 @@ Open a new terminal window, "cd" into the "translate_scrape" folder and once aga
 
 To run the application, type ```node translate.js``` into the console.
 
-###CORS Bypass
+
+### CORS Bypass
 The project still doesn't work because there is a Cross Origin Resource Sharing limitation set by Chrome. To bypass this, a chrome extension is needed.
 
 Install the Chrome extension "Moesif Origin & CORS Changer".
