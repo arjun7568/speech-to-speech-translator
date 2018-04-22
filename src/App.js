@@ -5,13 +5,14 @@ import Voice from './Components/Voice';
 import './App.css';
 
 class App extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      transcript: "example",
-      transcript2: "example2",
-      translation1: "translation1",
-      translation2: "translation2",
+      transcript: "",
+      transcript2: "",
+      translation1: "",
+      translation2: "",
       lang1: "en-US",
       lang2: "en-US"
     }
@@ -20,14 +21,17 @@ class App extends Component {
 
     this.setUser1Lang = this.setUser1Lang.bind(this);
     this.setUser2Lang = this.setUser2Lang.bind(this);
+
+    this.callAPI1 = this.callAPI1.bind(this);
+    this.callAPI2 = this.callAPI2.bind(this);
   }
 
   returnTranscript(transcript) {
-    this.setState({transcript: transcript});
+    this.setState({transcript: transcript}, () => this.callAPI1());
   }
 
   returnTranscript2(transcript2) {
-    this.setState({transcript2: transcript2});
+    this.setState({transcript2: transcript2}, () => this.callAPI2());
   }
 
   setUser1Lang(lang1) {
@@ -36,6 +40,29 @@ class App extends Component {
 
   setUser2Lang(lang2) {
     this.setState({lang2: lang2});
+  }
+
+  callAPI1() {
+    let url = 'http://localhost:5000/' + this.state.lang1 + "/" + this.state.lang2 + "/" + this.state.transcript;
+    fetch(url)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          translation1: response.text
+        })
+      })
+    console.log("called");
+  }
+
+  callAPI2() {
+    let url = 'http://localhost:5000/' + this.state.lang2 + "/" + this.state.lang1 + "/" + this.state.transcript2;
+    fetch(url)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          translation2: response.text
+        })
+      })
   }
 
   render() {
