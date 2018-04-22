@@ -2,7 +2,7 @@
 
 
 ## Overview
-This application takes voice inputs and outputs translated text-to-speech. It's written in React and Node.js.
+This application is a two-way speech translator, allowing two individuals to bridge potential language gaps. Written in React and Node. 
 
 
 ## Requirements
