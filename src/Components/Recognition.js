@@ -26,7 +26,7 @@ class VoiceRecognitionDemo extends Component {
           <VoiceRecognition
             onResult={this.onResult}
             continuous={true}
-            lang="en-US"
+            lang={this.props.lang}
             stop={this.state.stop}
           />
         )}

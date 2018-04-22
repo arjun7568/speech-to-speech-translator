@@ -14,7 +14,6 @@ class VoicePlayerDemo extends Component {
 
   componentWillReceiveProps(props) {
     this.setState({text: props.transcript})
-    console.log(props.transcript)
   }
 
   handleTextChange = (event) => {
@@ -35,7 +34,7 @@ class VoicePlayerDemo extends Component {
         {this.state.play && (
           <VoicePlayer
             play
-            lang="en-US"
+            lang={this.props.lang}
             text={this.state.text}
             onEnd={this.onEnd}
           />
